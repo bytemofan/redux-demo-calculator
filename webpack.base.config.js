@@ -7,7 +7,7 @@ var config = {
         version: '[">0.1%"]', //自动前缀版本
     },
     devServer: {
-        host:"10.252.160.43",
+        host:"127.0.0.1",
         port: 9000, //调试端口号
         hot: process.argv.indexOf('--hotreload')>-1, //是否使用react-hot-loader，false时全页面刷新
         colors: true,
