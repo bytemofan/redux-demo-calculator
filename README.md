@@ -3,6 +3,8 @@
 
 ## Features
 - React base es6
+- redux
+- react-redux
 - webpack
 - hot reloader
 - babel
@@ -19,8 +21,8 @@
 ## Clone
 
 ```bash
-$ git clone https://github.com/EdwardZZZ/react-webpack.git <yourAppName>
-$ cd <yourAppName>
+$ git clone https://github.com/Mmzer/redux-demo-calculator.git
+$ cd redux-demo-calculator
 $ npm install
 ```
 
