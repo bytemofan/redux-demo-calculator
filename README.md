@@ -1,6 +1,5 @@
-This is a boilerplate for React Webpack project. You could use it to build your own app.
-
-
+# redux-demo-calculator
+一个使用react和redux实现的仿iphone6s计算器
 
 ## Features
 - React base es6
