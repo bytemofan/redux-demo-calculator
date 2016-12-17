@@ -1,0 +1,64 @@
+@import '../assets/rem.scss';
+@mixin flexParent($column){
+	$boxOrient:horizontal;
+	$flexDirection:row;
+	@if($column){
+		$boxOrient:vertical;
+		$flexDirection:column;
+	}	
+	display:box-flex;
+	box-orient:$boxOrient;
+	display:flex;
+	flex-direction:$flexDirection;
+}
+@mixin flexCenter{
+	display:box-flex;
+	box-orient:horizontal;
+	box-pack:center;
+	box-align:center;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content: center;
+}
+.opeartion-body{
+	box-flex:8;
+	flex:8;
+	background-color:#eaeaea;
+	@include flexParent(true);
+	.table-tr{
+		width: 100%;
+		box-flex:1;
+		flex:1;
+		@include flexParent(false);
+		position:relative;
+		a{
+			display: inline-block;
+			height: 100%;
+			box-flex:1;
+			flex:1;
+			@include flexCenter;
+			font-size: 25px;
+			border-bottom: 1px solid #ccc;
+			border-right: 1px solid #ccc;
+			color: #000;
+			background-color: #eaeaea;
+			&:active{
+				background-color:#c1c0c0;
+			}
+		}
+		a.line-one{
+			background-color:#dedbdb;
+			&:active{
+				background-color:#c1c0c0;
+			}
+		}
+		a:last-child{
+			background-color:#ff9b15;
+			color: #fff;
+			&:active{
+				background-color:#f78d00;
+			}
+		}
+	}
+}

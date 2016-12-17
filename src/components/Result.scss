@@ -1,0 +1,15 @@
+@import '../assets/rem.scss';
+.result-body{
+	box-flex:3;
+	flex:3;
+	text-align:right;
+	padding:10px;
+	font-size:4em;
+	display:box-flex;
+	box-orient:vertical;
+	display:flex;
+	flex-direction:column;
+	justify-content:flex-end;
+	word-wrap: break-word;
+    word-break: break-all;
+}

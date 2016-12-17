@@ -1,0 +1,12 @@
+export const NUM_ONE_ZERO = 'NUM_ONE_ZERO'; 		//0
+export const NUM_TWO_ZERO = 'NUM_TWO_ZERO'; 		//00
+export const NUM_ONE = 'NUM_ONE'; 					//1
+export const NUM_TWO = 'NUM_TWO'; 					//2
+export const NUM_THREE = 'NUM_THREE'; 				//3
+export const NUM_FOUR = 'NUM_FOUR'; 				//4
+export const NUM_FIVE = 'NUM_FIVE'; 				//5
+export const NUM_SIX = 'NUM_SIX'; 					//6
+export const NUM_SEVEN = 'NUM_SEVEN'; 				//7
+export const NUM_EIGHT = 'NUM_EIGHT'; 				//8
+export const NUM_NINE = 'NUM_NINE';				//9
+export const NUM_DOT = 'NUM_DOT';					//.

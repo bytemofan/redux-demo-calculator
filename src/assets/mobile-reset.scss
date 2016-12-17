@@ -1,0 +1,86 @@
+@charset 'utf-8';
+body,div,
+dl,dt,dd,ul,ol,li,
+h1,h2,h3,h4,h5,h6,
+pre,
+form,fieldset,input,textarea,
+p,blockquote,
+th,tr,td,section,
+a,input,span{
+	margin:0;
+	padding:0;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box; 
+}
+
+html, body,
+form, fieldset,
+p, div, 
+h1, h2, h3, h4, h5, h6 {
+	-webkit-text-size-adjust:none;
+}
+
+html,body{
+	-webkit-user-select: none;
+	user-select: none;
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+}
+
+body{font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif,"microsoft yahei";}
+
+table {border-collapse:collapse;border-spacing:0;} 
+
+fieldset,img {border:0} 
+
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal} 
+
+ol,ul {list-style:none} 
+
+caption,th,td{text-align:center} 
+
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal} 
+
+q:before,q:after {content:''} 
+
+input[type=button],button{-webkit-appearance:none;-webkit-user-select:none;}
+
+a,img,input,select,li,div{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+
+a,img{text-decoration:none;-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-touch-callout:none;}
+
+a,input,img,select{outline: none;}
+
+input::-webkit-clear-button,
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {-webkit-appearance: none; }
+input::-webkit-search-cancel-button {display: none;}
+input:focus::-webkit-input-placeholder{opacity: 0;}
+
+::-webkit-scrollbar{display:none;}
+
+img{-webkit-touch-callou:none;}
+
+/* font-size */
+html{font-size:20px;}
+body{font-size:0.7rem;margin:0 auto;width:100%;min-width:320px;background:#fff;}
+html{font-size:100vw/16;}
+html,body{color:#22292c;}
+
+/* display */
+.show{display:block !important;}
+.hide,.none{display:none !important;}
+
+/* media */
+@media screen and (max-width:320px){html{font-size:20px !important;}}
+@media screen and (min-width:320px){html{font-size:20px;}}
+@media screen and (min-width:340px){html{font-size:21.25px;}}
+@media screen and (min-width:360px){html{font-size:22.5px;}}
+@media screen and (min-width:380px){html{font-size:23.75px;}}
+@media screen and (min-width:400px){html{font-size:25px;}}
+@media screen and (min-width:440px){html{font-size:27.5px;}}
+@media screen and (min-width:480px){html{font-size:30px;}}
+@media screen and (min-width:520px){html{font-size:32.5px;}}
+@media screen and (min-width:560px){html{font-size:35px;}}
+@media screen and (min-width:600px){html{font-size:37.5px;}}
+@media screen and (min-width:640px){html{font-size:40px !important;}}

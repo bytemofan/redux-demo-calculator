@@ -1,0 +1,142 @@
+/**
+ * rem.scss
+ * @description translate px to rem
+ * @author Mmzer
+ * @date 2016/09/09
+ * @translateTable:
+ * 
+ *    html default font-size:16px
+ *        |  px  |     rem       |
+ *	      ------------------------
+ * 	      |  12  | 12/16 = .75   |
+ *	      |  14  | 14/16 = .875  |
+ *	      |  16  | 16/16 = 1     |
+ *	      |  18  | 18/16 = 1.125 |
+ *	      |  20  | 20/16 = 1.25  |
+ *	      |  24  | 24/16 = 1.5   |
+ *	      |  30  | 30/16 = 1.875 |
+ *	      |  36  | 36/16 = 2.25  |
+ *	      |  42  | 42/16 = 2.625 |
+ *	      |  48  | 48/16 = 3     |
+ *	      -------------------------  
+ *	      
+ *	  html font-size:10px
+ *	  
+ *	     html{
+ *	     	   font-size:62.5%;  // 10/16 * 100% = 62.5%
+ *	     }
+ *	     
+ *	  	  |  px  |     rem        |
+ *		  -------------------------
+ *		  |  12  | 12/10 = 1.2    |
+ *		  |  16  | 16/10 = 1.6    |
+ *		  |  18  | 18/10 = 1.8    |
+ *		  |  20  | 20/10 = 2.0    |
+ *		  |  24  | 24/10 = 2.4    |
+ *		  |  36  | 36/10 = 3.6    |
+ *		  |  42  | 42/10 = 4.2    |
+ *		  |  48  | 48/10 = 4.8    |
+ *		  -------------------------
+ */
+
+
+$browser-default-font-size: 16px !default;
+/* $browser-default-font-size: 10px !default; */
+
+/**
+ * 去掉一个值的单位，如12px => 12
+ * eg. strip-units(12px) => 12
+ */
+@function strip-units($number){
+    @return $number / ($number * 0 + 1);
+} 
+
+
+/**
+ * translate single px to rem
+ * @param   $px 
+ * @return  $rem
+ * @example:
+ *    //scss
+ *    .header{
+ *    	  font-size: pxToRem(12px);
+ *    }
+ *
+ *    //css
+ *    .header{
+ *    	 font-size:0.75rem;
+ *    }
+ */
+@function pxToRem($px){
+	@return $px / $browser-default-font-size * 1rem;
+}
+
+@function remToPx($rem){
+	@return $rem * $browser-default-font-size * 1px;
+}
+
+/**
+ * translate mulity px to rem
+ * @param   $mulpx  [eg: 10px 20px]
+ * @return  mulity remvalues [eg:0.625rem 1.25rem]
+ * @example:
+ *    //scss
+ *    .test{
+ *    	  margin: mulpxToRem(10px 20px);
+ *    }
+ *
+ *    //css
+ *    .test{
+ *    	  margin: .625rem 1.25rem;
+ *    }
+ */
+@function mulpxToRem($mulpx){
+	$max: length($mulpx);
+	$rem:'';
+
+	@for $i from 1 through $max {
+		$value: strip-units(nth($mulpx,$i));
+		$browserSize: strip-units($browser-default-font-size);
+		$remValue: $value / $browserSize;
+
+		@if $i < $max {
+			$rem: $rem+ ' '+$remValue+'rem';
+		}
+	}
+
+	@return $rem;
+}
+
+@function mulRemToPx($mulRem){
+	$max: length($mulRem);
+	$pxValues:'';
+
+	@for $i from 1 through $max {
+		$value: strip-units(nth($mulRem,$i));
+		$browserSize: strip-units($browser-default-font-size);
+		$pxValue: $value / $browserSize;
+
+		@if $i < $max {
+			$pxValues: $pxValues + ' '+$pxValue+'px';
+		}
+	}
+
+	@return $pxValues;
+}
+
+/**
+ * calculate rem use in @mixin
+ * @param   $property [eg: margin]
+ * @param   $values   [10px 20px or 10px,20px]
+ */
+@mixin remMixin($property,$values){
+	$property: mulpxToRem($values);
+}
+
+@mixin pxMixin($property,$values){
+	$property: mulRemToPx($values);
+}
+
+
+
+
