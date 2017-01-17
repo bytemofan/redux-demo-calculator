@@ -1,6 +1,8 @@
 # redux-demo-calculator
 一个使用react和redux实现的仿iphone6s计算器
+
 ![](http://ww2.sinaimg.cn/mw690/aac28fdajw1fatw9qrwmtj208y0dyt91.jpg)
+
 
 ## Features
 - React base es6
